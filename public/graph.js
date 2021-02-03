@@ -47,7 +47,7 @@ const update = (data) => {
   paths.exit().transition().duration(750).attrTween("d", arcTweenExit).remove();
 
   // handle the current DOM path updates
-  paths.attr("d", arcPath).transition().duration(750).attr("d", arcTweenUpdate);
+  paths.attr("d", arcPath).transition().duration(750).attrTween("d", arcTweenUpdate);
 
   paths
     .enter()
@@ -62,8 +62,6 @@ const update = (data) => {
     .transition()
     .duration(750)
     .attrTween("d", arcTweenEnter);
-
-  // add events
 };
 
 // data array and firestore
